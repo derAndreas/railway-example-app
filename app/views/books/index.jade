@@ -1,0 +1,27 @@
+.page-header
+  h1 My Books
+
+.row
+  .span12
+    p!= link_to('<i class="icon-plus icon-white"></i> Add Book', path_to.new_book, {class: 'btn btn-primary'})
+
+.row
+  .span12
+    if books.length > 0
+      table.table.table-striped
+        thead
+          tr
+            th ID
+            th Actions
+        tbody
+          each book in books
+            tr
+              td
+                strong!= linkTo(book.name, path_to.book(book))
+              td
+                != link_to('<i class="icon-edit"></i> Edit', path_to.edit_book(book), {class: 'btn btn-mini'})
+                != link_to('Read', path_to.book_chapters(book), {class: 'btn btn-mini'})
+                != link_to('<i class="icon-remove icon-white"></i> Delete', path_to.book(book), {class: 'btn btn-mini btn-danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'})
+    else
+      p.alert.alert-block.alert-info
+        strong No Books were found.

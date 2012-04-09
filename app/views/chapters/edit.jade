@@ -1,0 +1,11 @@
+
+.page-header
+    h1 Edit Chapter
+
+- form_for(chapter, {action: path_to.book_chapter(params.book_id, chapter), method: 'PUT', id: "chapter_form", class: 'form-horizontal'}, function (form) {
+  != partial('chapters/_form', {locals: {form: form, chapter: chapter}})
+  .form-actions
+    != form.submit('<i class="icon-ok icon-white"></i> Update Chapter', {class: 'btn btn-primary'})
+    or
+    != link_to('Cancel', path_to.book_chapter(params.book_id, chapter), {class: 'btn'})
+- })

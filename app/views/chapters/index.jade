@@ -1,0 +1,29 @@
+.page-header
+  h1 Table of Contents
+
+.row
+  .span12
+    p
+        != link_to('<i class="icon-book"></i> Back To Book Index', path_to.books, {class: 'btn btn-mini'})
+        != link_to('<i class="icon-plus icon-white"></i> New chapter', path_to.new_book_chapter(params.book_id), {class: 'btn btn-primary'})
+        
+
+.row
+  .span12
+    if chapters.length > 0
+      table.table.table-striped
+        thead
+          tr
+            th Chapter
+            th Actions
+        tbody
+          each chapter in chapters
+            tr
+              td
+                strong!= link_to(chapter, path_to.book_chapter(params.book_id, chapter))
+              td
+                != link_to('<i class="icon-edit"></i> Edit', path_to.edit_book_chapter(params.book_id, chapter), {class: 'btn btn-mini'})
+                != link_to('<i class="icon-remove icon-white"></i> Delete', path_to.book_chapter(params.book_id, chapter), {class: 'btn btn-mini btn-danger', method: 'delete', remote: true, jsonp: '(function (u) {location.href = u;})'})
+    else
+      p.alert.alert-info
+        strong No Chapters were found.

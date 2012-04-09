@@ -1,4 +1,5 @@
 app.configure('development', function () {
+    app.set('view engine', 'jade');
     app.disable('view cache');
     app.disable('model cache');
     app.disable('eval cache');

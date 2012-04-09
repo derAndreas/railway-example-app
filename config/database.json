@@ -1,7 +1,0 @@
-{ "development":
-  { "driver":   "redis"
-  }
-, "test":
-  { "driver":   "memory"
-  }
-}

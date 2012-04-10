@@ -3,7 +3,7 @@
   h1 New Chapter
 
 - form_for(chapter, {action: path_to.book_chapters(params.book_id), method: 'POST', id: "chapter_form", class: 'form-horizontal'}, function (form) {
-  != partial('chapters/form.ejs', {locals: {form: form, chapter: chapter}})
+  != partial('chapters/_form', {locals: {form: form, chapter: chapter}})
   .form-actions
     != form.submit('<i class="icon-ok icon-white"></i> Create chapter', {class: 'btn btn-primary'})
     or

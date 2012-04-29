@@ -1,0 +1,25 @@
+
+.page-header
+  h1 Login 
+    small Authenticate and enter the member area
+
+
+.container.offset2.span6
+  .row
+    h2 Enter your credentials
+    - form_tag({action: path_to.login, method: 'POST', id: "login_form", class: 'form-horizontal'}, function (form) {
+        != renderErrorMessages(errors)
+        .control-group
+          != label_tag("Username", {class: "control-label", 'for' : 'username'})
+          .controls
+            != input_tag({name : "username", type: "text"})
+        .control-group
+          != label_tag("Password", {class: "control-label", 'for' : 'password'})
+          .controls
+            != input_tag({name: 'password', type: 'password'})
+      .form-actions
+        <button class="btn btn-primary" type="submit">Login</button>
+        or
+        != link_to('Cancel', path_to.root, {class: 'btn btn-mini'})
+    - })
+

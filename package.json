@@ -5,14 +5,19 @@
 , "dependencies":
   { "ejs":              "*"
   , "ejs-ext":          "*"
+  , "jade":             "*"
+  , "jade-ext":         "*"
   , "express":          ">= 2.5.8"
   , "railway":          ">= 0.1.6"
   , "jugglingdb":       ">= 0.1.0"
   , "coffee-script":    ">= 1.1.1"
   },
   "devDependencies":
-  { "nodeunit":         "*"
-  , "sinon":            "*"
+  {
+    "superagent":       "*"
+  , "mocha":            "*"
+  , "should":           "*"
+  , "tobi":             "*"
   }
 , "scripts":
   { "test": "nodeunit test/*/*"

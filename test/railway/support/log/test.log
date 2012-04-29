@@ -1,0 +1,70 @@
+
+[33mSun Apr 29 2012 10:17:57 GMT+0000 (UTC)[39m [1m1[22m
+[1mGET[22m [90m/test/index[39m controller: [32mtest[39m action: [34mindex[39m
+>>> perform [90m[1mprotect from forgery[22m[39m
+<<< protect from forgery [0 ms]
+>>> perform [34m[1mindex[22m[39m
+Rendering [90mtest/index[39m using layout [90mtest_layout[39m
+<<< index [10 ms]
+
+[33mSun Apr 29 2012 10:17:57 GMT+0000 (UTC)[39m [1m2[22m
+[1mGET[22m [90m/ctrlfilter/filters[39m controller: [32mctrlfilter[39m action: [34mfilters[39m
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+>>> perform [90m[1mprotect from forgery[22m[39m
+<<< protect from forgery [0 ms]
+<<<  [0 ms]
+>>> perform [90m[1mtestFilterCallNamed_thename[22m[39m
+<<< testFilterCallNamed_thename [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+>>> perform [34m[1mfilters[22m[39m
+Send to client: [object Object]
+<<< filters [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+>>> perform [90m[1mtestFilterAfterCallNamed_thename[22m[39m
+<<< testFilterAfterCallNamed_thename [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+
+[33mSun Apr 29 2012 10:17:57 GMT+0000 (UTC)[39m [1m3[22m
+[1mGET[22m [90m/test/use-and-publish-from-app-controller[39m controller: [32mtest[39m action: [34muse-and-publish-from-app-controller[39m
+>>> perform [90m[1mprotect from forgery[22m[39m
+<<< protect from forgery [0 ms]
+>>> perform [34m[1muse-and-publish-from-app-controller[22m[39m
+Send to client: [object Object]
+<<< use-and-publish-from-app-controller [1 ms]
+
+[33mSun Apr 29 2012 10:17:57 GMT+0000 (UTC)[39m [1m4[22m
+[1mGET[22m [90m/ctrlfilter/redirect[39m controller: [32mctrlfilter[39m action: [34mredirect[39m
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+>>> perform [90m[1mprotect from forgery[22m[39m
+<<< protect from forgery [0 ms]
+<<<  [0 ms]
+>>> perform [90m[1mtestFilterCallNamed_thename[22m[39m
+<<< testFilterCallNamed_thename [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+>>> perform [34m[1mredirect[22m[39m
+Redirected to [90m/ctrlfilter/filters[39m
+<<< redirect [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+<<<  [0 ms]
+>>> perform [90m[1mtestFilterAfterCallNamed_thename[22m[39m

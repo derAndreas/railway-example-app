@@ -1,0 +1,17 @@
+!!! 5
+html
+  head
+    title Test
+    != stylesheet_link_tag('bootstrap', 'style', 'bootstrap-responsive')
+    != javascript_include_tag('jquery', 'bootstrap', 'rails', 'application')
+    != csrf_meta_tag()
+  body
+    - var flash = request.flash('info').pop(); if (flash) {
+      .alert.alert-success= flash
+    - }
+
+    - var flash = request.flash('error').pop(); if (flash) {
+      .alert.alert-error= flash
+    - }
+
+    != body

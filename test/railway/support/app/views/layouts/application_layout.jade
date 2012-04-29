@@ -1,0 +1,11 @@
+!!! 5
+html
+  head
+    - var title = title || 'demo title'
+    title= title
+    != stylesheet_link_tag('bootstrap', 'style', 'bootstrap-responsive')
+    != javascript_include_tag('jquery', 'bootstrap', 'rails', 'application')
+    != csrf_meta_tag()
+  body
+      != body
+

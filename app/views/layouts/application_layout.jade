@@ -10,9 +10,21 @@ html
       .navbar-inner
         .container
           a.brand(href="#") Project Name
+          p.navbar-text.pull-right Logged in as 
+            a(href="#") #{request.session.user.name}
+            \-
+            - if(UserIsAuthenticated(request.session.user) == false || request.session.user.__isAnonymousUser == true) {
+              a(href="#{path_to.login}") Login
+            - } else {
+              a(href="#{path_to.logout}") Logout
+            - }
 
     .container
       - var flash = request.flash('info').pop(); if (flash) {
+        .alert.alert-info= flash
+      - }
+
+      - var flash = request.flash('success').pop(); if (flash) {
         .alert.alert-success= flash
       - }
 
@@ -21,3 +33,4 @@ html
       - }
 
       != body
+

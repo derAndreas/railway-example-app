@@ -1,4 +1,6 @@
-var express    = require('express');
+var express    = require('express'),
+    MySQLStore = require(app.root + '/vendor/connect-session-store-mysql')(express),
+    config     = require('./database.json');
 
 app.configure(function(){
     var cwd = process.cwd();
@@ -11,7 +13,14 @@ app.configure(function(){
     app.set('cssDirectory', '/stylesheets/');
     app.use(express.bodyParser());
     app.use(express.cookieParser('secret'));
-    app.use(express.session({secret: 'secret'}));
+
+
+    app.use(express.session({
+        secret: 'secret',
+        store : new MySQLStore(config[app.set('env')], {
+            expire: 3600
+        })
+    }));
     app.use(express.methodOverride());
     app.use(app.router);
 });

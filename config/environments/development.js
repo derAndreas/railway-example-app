@@ -6,5 +6,8 @@ app.configure('development', function () {
     app.enable('log actions');
     app.enable('env info');
     app.use(require('express').errorHandler({ dumpExceptions: true, showStack: true }));
+
+
+    app.set('session-timeout', 3600); // Sessiontimeout in seconds, 1 hour
 });
 

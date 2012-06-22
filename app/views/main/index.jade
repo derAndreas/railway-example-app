@@ -14,7 +14,12 @@
 
   .span6
     h2 What next?
-    ul.unstyled
-      li
-        a.btn-primary.btn-mini(href="#{path_to.login}") Login
-    
+    - if(UserIsAuthenticated(request.session.user) == false || request.session.user.__isAnonymousUser == true) {
+      p
+        a.btn.btn-primary(href="#{path_to.login}") Login
+    - } else {
+      p.btn-group
+        a.btn.btn-primary(href="#{path_to.logout}") View Profile
+        a.btn(href="#{path_to.logout}") Logout
+    - }
+

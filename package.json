@@ -9,7 +9,7 @@
   , "jade-ext":         "*"
   , "express":          ">= 2.5.8"
   , "railway":          ">= 0.1.6"
-  , "jugglingdb":       ">= 0.1.0"
+  , "jugglingdb": "git://github.com/derAndreas/jugglingdb.git#hasAndBelongsToMany"
   , "coffee-script":    ">= 1.1.1"
   },
   "devDependencies":

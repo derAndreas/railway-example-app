@@ -9,7 +9,7 @@ action('index', function() {
 action('login', function() {
     this.title = 'Login to RailwayJS demo project';
     this.errors = {};
-
+    
     if(request.method.toLowerCase() == 'post') {
         var formValidation = validateUserFormInput(request.body.username, request.body.password);
         if(!formValidation.success) {
@@ -25,7 +25,6 @@ action('login', function() {
                     
                     User.setAuthenticated(user, true);
                     request.session.user = user;
-                    console.log(req.session)
                     redirect(path_to.root);
                 }
             }.bind(this));

@@ -4,7 +4,7 @@ User.seed(function() {
         name    : 'First User',
         username: 'username@demo.com',
         email   : 'username@demo.com',
-        password: '',
+        password: '4a0bd51577c08d883680c49cee23fd225e0b77da8a67899b64ea53d0a6a78fc2',   // "mypass" with salt 'need-to-be-done'
         salt    : 'need-to-be-done',
         enabled : 0,
         registeredAt : new Date(),

@@ -4,7 +4,7 @@ before('protect from forgery', function () {
 
 
 before(provideAnyUser);
-publish(generateAnonymousUser)
+publish(generateAnonymousUser);
 
 
 /**
@@ -17,8 +17,6 @@ publish(generateAnonymousUser)
 function provideAnyUser() {
     var timeout = app.settings && app.settings['session-timeout'],
         user    = req.session.user;
-
-    console.log(user)
 
     if(!user) {
         // there is no user in the session, so generate an anonymous user

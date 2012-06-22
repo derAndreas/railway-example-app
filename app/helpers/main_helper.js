@@ -12,7 +12,7 @@ function renderErrorMessages(errors) {
         return out;
     }
 
-    out += genericTag('div', printErrors(), {class: 'alert alert-error'});
+    out += genericTag('div', printErrors(), {'class': 'alert alert-error'});
 
     return out;
 
@@ -24,7 +24,7 @@ function renderErrorMessages(errors) {
             if (errors.hasOwnProperty(prop)) {
                 out += '<ul>';
                 errors[prop].forEach(function (msg) {
-                    out += genericTag('li',  msg, {class: 'error-message'});
+                    out += genericTag('li',  msg, {'class': 'error-message'});
                 });
                 out += '</ul>';
             }

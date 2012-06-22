@@ -18,7 +18,7 @@ User.authenticateUserByUsernameAndPassword = function(username, password, callba
             User.findOne({where: {username : username, password: md5Pass}}, function(err, user) {
                 if(err) {
                     callback(['An unknown error occured']);
-                } else if(!result) {
+                } else if(!user) {
                     callback(['Login not successfull, please validate your credentials']);
                 } else {
                     callback(null, user);

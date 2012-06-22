@@ -1,7 +1,4 @@
-var undef,
-    RwUtils = require('node_modules/railway/lib/railway_utils'),        // todo: BAD!
-    htmlTagParams = RwUtils.html_tag_params,
-    safe_merge = RwUtils.safe_merge;
+var undef;
 
 module.exports = {
     renderErrorMessages: renderErrorMessages,
@@ -46,20 +43,10 @@ function UserIsAuthenticated(user) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // ----------------------------------------------- private helpers -----------------
+// The following helpers are copied here, because a direct require() is not
+// possible and a require() into the node_moduels/railway/lib folder cannot
+// be the solution. Define the utils in an own helper file
 
 // copied from helpers.js
 /**
@@ -77,3 +64,27 @@ function genericTag(name, inner, params, override) {
 function genericTagSelfclosing(name, params, override) {
     return '<' + name + htmlTagParams(params, override) + ' />';
 }
+
+
+function htmlTagParams(params, override) {
+    var maybe_params = '';
+    safe_merge(params, override);
+    for (var key in params) {
+        if (params[key] != undef) {
+            maybe_params += ' ' + key + '="' + params[key].toString().replace(/&/g, '&amp;').replace(/"/g, '&quot;') + '"';
+        }
+    }
+    return maybe_params;
+};
+
+function safe_merge(merge_what) {
+    merge_what = merge_what || {};
+    Array.prototype.slice.call(arguments).forEach(function (merge_with, i) {
+        if (i == 0) return;
+        for (var key in merge_with) {
+            if (!merge_with.hasOwnProperty(key) || key in merge_what) continue;
+            merge_what[key] = merge_with[key];
+        }
+    });
+    return merge_what;
+};

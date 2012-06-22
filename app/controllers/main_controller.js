@@ -35,7 +35,7 @@ action('login', function() {
 });
 
 action('logout', function() {
-    session.user = use('generateAnonymouseUser');
+    session.user = use('generateAnonymousUser');
     redirect(path_to.root);
 });
 

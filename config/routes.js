@@ -8,6 +8,8 @@ exports.routes = function (map) {
     map.get('/login', 'main#login');
     map.post('/Login', 'main#login');
     map.get('/logout', 'main#logout');
+    
+    map.get('/profile', 'user#index');
 
     // Generic routes. Add all your routes below this line
     // feel free to remove generic routes

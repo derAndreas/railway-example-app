@@ -51,7 +51,11 @@ function provideAnyUser() {
     }
 }
 
-
+/**
+ * Generate an anonymous user instance
+ *
+ * @retuen {Object} User instance
+ */
 function generateAnonymousUser() {
     var anonymous = new User({
             name : 'Anonymous',

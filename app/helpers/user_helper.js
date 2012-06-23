@@ -1,3 +1,2 @@
-var undef;
 module.exports = {
 };

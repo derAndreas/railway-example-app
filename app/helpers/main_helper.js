@@ -4,7 +4,12 @@ module.exports = {
     renderErrorMessages: renderErrorMessages
 };
 
-
+/**
+ * Render Error Messages for HTML output
+ *
+ * @param {Object} errors the errors as an key value pair
+ * @return {String}
+ */
 function renderErrorMessages(errors) {
     var out = '';
 
@@ -33,8 +38,6 @@ function renderErrorMessages(errors) {
     }
 
 }
-
-
 
 
 // ----------------------------------------------- private helpers -----------------

@@ -1,9 +1,9 @@
 var undef;
 
 module.exports = {
-    renderErrorMessages: renderErrorMessages,
-    UserIsAuthenticated: UserIsAuthenticated
+    renderErrorMessages: renderErrorMessages
 };
+
 
 function renderErrorMessages(errors) {
     var out = '';
@@ -33,12 +33,6 @@ function renderErrorMessages(errors) {
     }
 
 }
-
-function UserIsAuthenticated(user) {
-    return User.isAuthenticated(user);
-}
-
-
 
 
 

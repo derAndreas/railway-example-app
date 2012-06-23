@@ -2,9 +2,10 @@ before('protect from forgery', function () {
     protectFromForgery('5d016d2ae47dfb552e63b831eb9cecd809d60ed8');
 });
 
+publish(generateAnonymousUser);
+publish(isAuthenticatedHook);
 
 before(provideAnyUser);
-publish(generateAnonymousUser);
 
 
 /**
@@ -65,4 +66,23 @@ function generateAnonymousUser() {
     anonymous.__isAnonymousUser = true;
         
     return User.setAuthenticated(anonymous, false);
+}
+
+
+/**
+ * Hook to call with before() to validate
+ * that an authenticated user is provided
+ * 
+ * Calls `next()` if an authenticated user is
+ * available, if not `redirect()` to login page is performed.
+ *
+ * @param {Function} next `next` function to call to next fn in stack
+ * @return void
+ */
+function isAuthenticatedHook() {
+    if(User.isAuthenticated(request && request.session.user)) {
+        return next();
+    }
+    flash('error', 'Your are not logged in. Please authenticate...')
+    return redirect(path_to.login)
 }
